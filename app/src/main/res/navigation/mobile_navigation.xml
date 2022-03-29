@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_main">
+
+    <fragment
+        android:id="@+id/nav_main"
+        android:name="com.mundoanimal.MainFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_AnimalFragment"
+            app:destination="@id/nav_animal_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_animal_list"
+        android:name="com.mundoanimal.AnimalFragment"
+        android:label="Animales"
+        tools:layout="@layout/fragment_animal_list">
+
+        <action
+            android:id="@+id/action_AnimalFragment_to_MainFragment"
+            app:destination="@id/nav_main" />
+        <action
+            android:id="@+id/action_AnimalFragment_to_ImageListFragment"
+            app:destination="@id/nav_image_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_image_list"
+        android:name="com.mundoanimal.ImageListFragment"
+        android:label="Imagenes"
+        tools:layout="@layout/fragment_image_list">
+
+        <action
+            android:id="@+id/action_ImageListFragment_to_AnimalFragment"
+            app:destination="@id/nav_animal_list" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_terms"
+        android:name="com.mundoanimal.TermsFragment"
+        android:label="@string/menu_terms"
+        tools:layout="@layout/fragment_terms">
+        <action
+            android:id="@+id/action_TermsFragment_to_MainFragment"
+            app:destination="@id/nav_main" />
+    </fragment>
+</navigation>
